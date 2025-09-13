@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GoodMeasureApps — MentorMe & Next-Gen Learning Apps</title>
+  <meta name="description" content="GoodMeasureApps builds uplifting, useful apps for teens and families. Launching MentorMe on Google Play, with iOS soon. More never-before-seen apps coming." />
+  <meta name="theme-color" content="#0ea5a4" />
+  <style>
+    :root{
+      --bg: #0b0f15;        /* deep inky */
+      --panel:#0f1520;      /* soft card */
+      --text:#e6f1ff;       /* light text */
+      --muted:#a8b3c7;
+      --brand:#14b8a6;      /* signature teal */
+      --brand-2:#6d28d9;    /* accent purple */
+      --ring: rgba(20,184,166,.35);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:linear-gradient(120deg,#0a0f18 0%,#0c131f 50%,#0a0f18 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Sego UI,Roboto,Helvetica,Arial,sans-serif;}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{opacity:.9}
+    .max{max-width:1120px;margin-inline:auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,21,.6);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .logo{width:36px;height:36px;border-radius:12px;background:
+      radial-gradient(120px 60px at 0% 0%, rgba(20,184,166,.25), transparent 60%),
+      radial-gradient(120px 80px at 100% 100%, rgba(109,40,217,.25), transparent 60%),
+      linear-gradient(135deg, #12a3b0, #6e2fcf);
+      box-shadow: 0 6px 24px rgba(109,40,217,.25), inset 0 0 0 1px rgba(255,255,255,.12);}
+    nav a{padding:10px 12px;border-radius:10px;color:var(--muted)}
+    nav a.active, nav a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:56px 24px}
+    .hero .card{background:linear-gradient(160deg,rgba(20,184,166,.12),rgba(109,40,217,.10));border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);border-radius:calc(var(--radius) + 6px);padding:28px}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px;}
+    .sub{color:var(--muted);font-size:clamp(14px,2vw,17px)}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:var(--text);box-shadow:0 6px 20px rgba(0,0,0,.35)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#22d3ee);border:0;color:#042d2b}
+    .btn.ghost:hover{background:rgba(255,255,255,.06)}
+    .pill{display:inline-flex;align-items:center;gap:8px;font-weight:600;background:rgba(20,184,166,.12);color:#bdf3ec;border:1px solid rgba(20,184,166,.35);padding:8px 12px;border-radius:999px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    h2{font-size:clamp(22px,3vw,30px);margin:0 0 10px}
+    h3{margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;background:rgba(109,40,217,.18);color:#d8c8ff;border:1px solid rgba(109,40,217,.4);padding:6px 10px;border-radius:999px;font-size:12px}
+    .features{padding:14px}
+    .features li{margin:8px 0}
+    .section{padding:46px 24px}
+    .apps{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .foot{border-top:1px solid rgba(255,255,255,.08);padding:26px 24px;color:var(--muted);font-size:14px}
+    .kicker{font-size:13px;color:#b7c7dd;letter-spacing:.25px}
+    .note{font-size:13px;color:#a8b3c7}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .chip{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#cfe2ff}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);margin:18px 0}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .apps{grid-template-columns:1fr}
+      nav{display:none}
+      .menu{display:inline-flex}
+    }
+    .menu{display:none;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.08)}
+    /* tiny icon */
+    .icon{width:18px;height:18px;display:inline-block}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="max nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>GoodMeasureApps</span>
+        <span class="kicker">Building tools that lift people up</span>
+      </div>
+      <nav>
+        <a href="#mentorme" class="active">MentorMe</a>
+        <a href="#apps">Future Apps</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <a class="menu" href="#contact" aria-label="Contact">Menu ▾</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero max" id="mentorme">
+      <div>
+        <span class="pill">🚀 Now preparing launch on Google Play • iOS next</span>
+        <h1>MentorMe — Teen Life-Skills & Mentorship, Done Right</h1>
+        <p class="sub">
+          Practical guidance for confidence, study habits, leadership, budgeting, and everyday decision-making.
+          MentorMe turns lessons into wins with activities, quizzes, and progress streaks.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#" title="Google Play link coming soon">Get it on Google Play</a>
+          <a class="btn ghost" href="#apps">See what’s coming next</a>
+        </div>
+        <div class="chips">
+          <span class="chip">Education</span>
+          <span class="chip">Study Guide</span>
+          <span class="chip">Parenting-friendly</span>
+          <span class="chip">Self-Help</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">What teens get inside MentorMe</h3>
+        <ul class="features">
+          <li>📚 Guided modules: Confidence, Study Skills, Leadership, Money Basics</li>
+          <li>🧭 Simple, real-world examples and actions</li>
+          <li>📝 Quick quizzes with instant feedback</li>
+          <li>🔥 Streaks, badges, and progress tracking</li>
+          <li>🔒 Safe by design: no chats, no location sharing</li>
+        </ul>
+        <div class="divider"></div>
+        <p class="note">Pricing at launch: <b>$1 Basic</b> • <b>$4 Premium</b>. Early supporters lock in pricing. Gift-card drawings may be offered as promotional events (no gambling/wagering).</p>
+      </div>
+    </section>
+
+    <section class="section max" id="apps">
+      <h2>Coming Soon from GoodMeasureApps</h2>
+      <p class="muted" style="max-width:70ch">
+        We’re crafting useful, never-before-experienced tools focused on learning, clarity, and smart decisions.
+      </p>
+      <div class="apps">
+        <article class="card">
+          <span class="badge">Concept • R&D</span>
+          <h3 style="margin:10px 0 6px">Quantum Market Nexus</h3>
+          <p class="muted">An accessible stock analysis companion with real-time insights, practice trading, and learning flows—built to reduce anxiety and sharpen decision-making.</p>
+          <ul class="features">
+            <li>📈 Trend, volume & breakout spotting</li>
+            <li>🎮 $10k virtual practice game</li>
+            <li>🔔 Smart alerts (non-monetary)</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge">Exploration</span>
+          <h3 style="margin:10px 0 6px">GoodMeasure Labs</h3>
+          <p class="muted">A rotating set of “micro-apps” that teach by doing—short lessons, quick wins, and skill boosts for everyday life.</p>
+          <ul class="features">
+            <li>🧠 Micro-modules & mini quizzes</li>
+            <li>⚡ Tap-friendly tasks</li>
+            <li>📅 Weekly updates</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section max" id="about">
+      <h2>Our Approach</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Simple & Practical</h3>
+          <p class="muted">We strip away noise. Teens get clear steps that turn guidance into action—today, not “someday.”</p>
+        </div>
+        <div class="card">
+          <h3>Parent-Friendly</h3>
+          <p class="muted">No open chats, no location sharing. A safe learning space you can trust.</p>
+        </div>
+        <div class="card">
+          <h3>Built to Inspire</h3>
+          <p class="muted">Progress streaks, badges, and supportive language create momentum and confidence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section max" id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p class="muted" style="margin-top:0">Questions, partnerships, or press? We’d love to hear from you.</p>
+        <p><b>Email:</b> <a href="mailto:hello.goodmeasureapps@gmail.com">hello.goodmeasureapps@gmail.com</a></p>
+        <div class="divider"></div>
+        <p class="note">By contacting us, you agree to our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="max" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center">
+      <div>© <span id="y"></span> GoodMeasureApps. All rights reserved.</div>
+      <div class="chips">
+        <a class="chip" href="privacy.html">Privacy</a>
+        <a class="chip" href="terms.html">Terms</a>
+        <a class="chip" href="#mentorme">MentorMe</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
